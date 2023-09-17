@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static "weather_app/css/style.css" %}">
+    <title>Weather-Cast</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      <input
+        type="text"
+        name="city1"
+        class="searchInput"
+        placeholder="First City (Obligatory)"
+      />
+      
+      <button type="submit" class="submit-btn">Compare Cities</button>
+    </form>
+    <div class="main-container">
+      {% if weather_data1 %} 
+      {% include "weather_app/weather.html" with weather_data=weather_data1 daily_forcasts=daily_forcasts1 %} 
+      {% endif %}
+    </div>
+  </body>
+</html>

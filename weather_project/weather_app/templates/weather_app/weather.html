@@ -1,0 +1,45 @@
+{% if weather_data %}
+
+<div class="aside-container">
+  <img
+    src="http://openweathermap.org/img/w/{{weather_data.icon}}.png"
+    alt="{{weather_data.description}}"
+    class="side-img"
+  />
+  <h1 class="temperature">{{weather_data.temperature}}C°</h1>
+  <p class="description">{{weather_data.description}}</p>
+  <hr />
+  <p class="date">9/17/2032</p>
+  <h1 class="city-name">{{weather_data.city}}</h1>
+</div>
+
+{% endif %} {% if daily_forcasts %}
+<div class="elements-container">
+  <h1 class="grid-heading">5-day Forecast</h1>
+
+  <div class="grid-container">
+    {% for forcast in daily_forcasts %}
+    <div class="card">
+      <p class="city">{{forcast.day}}</p>
+      <p class="weather">{{forcast.description}}</p>
+      <img
+        src="http://openweathermap.org/img/w/{{forcast.icon}}.png"
+        alt="{{forcast.description}}"
+      />
+      <p class="temp">{{forcast.max_temp}}°</p>
+      <div class="minmaxContainer">
+        <div class="min">
+          <p class="minHeading">Min</p>
+          <p class="minTemp">{{forcast.min_temp}}°</p>
+        </div>
+        <div class="max">
+          <p class="maxHeading">Max</p>
+          <p class="maxTemp">{{forcast.max_temp}}°</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endif %}
