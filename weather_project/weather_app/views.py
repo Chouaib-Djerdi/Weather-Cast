@@ -57,10 +57,12 @@ def fetch_weather_and_forcast(city, api_key, current_weather_url, forecast_url):
         "temperature": round(response["main"]["temp"] - 273.15),
         "description": response["weather"][0]["description"],
         "icon": response["weather"][0]["icon"],
+        "today": datetime.date.today(),
     }
 
     daily_forcasts = []
-    for daily_data in forecast_response["list"][:5]:
+    print(len(forecast_response["list"]))
+    for daily_data in forecast_response["list"][::8]:
         print(daily_data["dt"])
         print(
             datetime.datetime.fromtimestamp(

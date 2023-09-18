@@ -3,3 +3,4 @@ API_KEY
 __pycache__/
 db.sqlite3
 .vscode
+.env

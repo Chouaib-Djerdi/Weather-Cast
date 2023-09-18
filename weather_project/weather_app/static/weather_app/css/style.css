@@ -23,6 +23,9 @@ body {
 
 form {
   margin: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .main-container {
@@ -35,6 +38,7 @@ form {
 }
 
 .aside-container {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,9 +79,15 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-image: url("https://svgshare.com/i/xeW.svg");
+  /* background-image: url("https://svgshare.com/i/xeW.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
   /* background-color: var(--blue); */
   color: var(--white);
   padding: 2rem;
@@ -103,8 +113,8 @@ form {
 
 .card {
   position: relative;
-  width: 13.75rem;
-  height: 15.5rem;
+  width: 13.25rem;
+  height: 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,3 +186,35 @@ form {
 }
 
 /*Search Bar*/
+.searchInput {
+  height: 2rem;
+  width: 12rem;
+  border-radius: 6px;
+  border: 2px solid var(--grey);
+  outline-color: #131619;
+  padding: 1rem 1rem 1rem 0.5rem;
+}
+
+.submit-btn {
+  height: 2rem;
+  width: 4rem;
+  cursor: pointer;
+  color: var(--dark);
+  font-size: 18px;
+  font-weight: 700;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  color: var(--white);
+
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
