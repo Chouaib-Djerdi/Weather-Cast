@@ -9,13 +9,13 @@ Soon ...
 Clone the project
 
 ```bash
-  git clone https://github.com/Chouaib-Djerdi/Fennec-Bookstore
+  git clone https://github.com/Chouaib-Djerdi/Weather-Cast
 ```
 
 Go to the project directory
 
 ```bash
-  cd backend/bookstore
+  cd weather_project
 ```
 
 Install dependencies
